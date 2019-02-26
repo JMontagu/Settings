@@ -1,0 +1,12 @@
+[user]
+	name = Jade Montagu
+	email = jade@jademontagu.com
+[core]
+	editor = vim
+[alias]
+	st = status
+	co = checkout
+	lg = log --pretty=oneline --abbrev-commit
+	cleanup = !git branch --merged master | grep -v \"master\" | xargs git branch -d
+[push]
+	default = current
