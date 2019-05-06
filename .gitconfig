@@ -8,5 +8,8 @@
 	co = checkout
 	lg = log --pretty=oneline --abbrev-commit
 	cleanup = !git branch --merged master | grep -v \"master\" | xargs git branch -d
+	pushf = push --force-with-lease
 [push]
 	default = current
+[credential]
+	helper = osxkeychain
