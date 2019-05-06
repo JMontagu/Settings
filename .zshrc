@@ -3,6 +3,8 @@ awsauth () {
     [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"
 }
 
+export NVM_AUTO_USE=true
+
 export GOPATH=$HOME/go/Documents/dev/go
 
 # If you come from bash you might have to change your $PATH.
@@ -26,11 +28,12 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  dotenv
-  vscode
-  last-working-dir
-  zsh-nvm
+    zsh-nvm
+    git
+    dotenv
+    vscode
+    last-working-dir
+    gitignore
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -38,9 +41,5 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 prompt_dir() {
-  prompt_segment blue black '%3/'
+    prompt_segment blue black '%3/'
 }
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
